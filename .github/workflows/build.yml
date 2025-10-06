@@ -32,6 +32,20 @@ jobs:
             bin_name: runtipi-cli
             artifact_name: runtipi-cli-linux-x86_64
 
+          - release_for: macos-intel
+            os: ubuntu-latest
+            goos: darwin
+            goarch: amd64
+            bin_name: runtipi-cli
+            artifact_name: runtipi-cli-macos-intel
+
+          - release_for: macos-apple-silicon
+            os: ubuntu-latest
+            goos: darwin
+            goarch: arm64
+            bin_name: runtipi-cli
+            artifact_name: runtipi-cli-macos-apple-silicon
+
     runs-on: ${{ matrix.platform.os }}
     steps:
       - name: Echo distinct ID ${{ github.event.inputs.distinct_id }}
